@@ -31,7 +31,6 @@ public:
 
 Trade bestBuySellTime(const vector<int> & prices) {
     int indLowest = 0;
-    int largest = 0;
     int indLargest = 0;
     int maxProfit = 0;
 
