@@ -38,6 +38,13 @@ public:
 		}
 		return count;
 	}
+
+	bool full() const {
+		if (count() == buffer.size()) {
+			return true;
+		}
+		return false;
+	}
     
 };
 
