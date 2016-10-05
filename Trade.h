@@ -30,24 +30,24 @@ public:
 };
 
 Trade bestBuySellTime(const vector<int> & prices) {
-    int smallestIndex = 0;
+    int indLowest = 0;
     int largest = 0;
-    int largestIndex = 0;
+    int indLargest = 0;
 
     for (int i = 1; i < prices.size(); ++i) {
-        if ((prices[i] < prices[smallestIndex]) && (i < prices.size()-1)) {
-            smallestIndex = i;
+        if ((prices[i] < prices[indLowest]) && (i < prices.size()-1)) {
+            indLowest = i;
         }
     }
 
-    for (int i = smallestIndex; i < prices.size(); ++i) {
+    for (int i = indLowest; i < prices.size(); ++i) {
         if (prices[i] > largest) {
             largest = prices[i];
-            largestIndex = i;
+            indLargest = i;
         } 
     }
 
-    return Trade(smallestIndex, largestIndex);
+    return Trade(indLowest, indLargest);
 }
 
 
