@@ -33,20 +33,20 @@ Trade bestBuySellTime(const vector<int> & prices) {
     int indLowest = 0;
     int largest = 0;
     int indLargest = 0;
+    int maxProfit = 0;
 
-    for (int i = 1; i < prices.size(); ++i) {
-        if ((prices[i] < prices[indLowest]) && (i < prices.size()-1)) {
-            indLowest = i;
+    for(int i = 0; i < prices.size(); ++i) {
+        for (int j = i; j < prices.size(); ++j) {
+            if ((prices[j] - prices[i]) > maxProfit) {
+                maxProfit = prices[j] - prices[i];
+                indLowest = i;
+                indLargest = j;
+            }
         }
     }
 
-    for (int i = indLowest; i < prices.size(); ++i) {
-        if (prices[i] > largest) {
-            largest = prices[i];
-            indLargest = i;
-        } 
-    }
-
+    cout << indLowest << " " << indLargest << endl;
+    
     return Trade(indLowest, indLargest);
 }
 
