@@ -22,9 +22,11 @@ using std::endl;
 class CircularBuffer {
 protected:
 	vector<char> buffer;
+	int front;
+	int rear;
 
 public: 
-	CircularBuffer(int size) {
+	CircularBuffer(int size) :front(0), rear(0) {
 		buffer = vector<char>(size);
 		cout << buffer.size() << endl;
 	}
