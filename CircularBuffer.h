@@ -33,17 +33,13 @@ public:
 	int count() const {
 		int count = 0;
 		for(int i = 0; i < buffer.size(); i++) {
-			if (buffer[i] != (char) 0) {
-				++count;
-			}
+			if (buffer[i] != (char) 0) { ++count; }
 		}
 		return count;
 	}
 
 	bool full() const {
-		if (count() == buffer.size()) {
-			return true;
-		}
+		if (count() == buffer.size()) { return true; }
 		return false;
 	}
 
@@ -52,15 +48,20 @@ public:
 			if (rear == buffer.size() - 1) { rear = 0; }
 			else { ++rear; }
 			buffer[rear] = c;
-			if (front == -1) {
-				front = 0;
-			}
+			if (front == -1) { front = 0; }
 		}
 	}
 
 	char remove() {
-		
-	}
+		char removed = (char) 0;
+		if (count() > 0) {
+			removed = buffer[front];
+			buffer[front] = (char) 0;
+			if (front == rear) { front = rear = -1; }	
+			if (front == buffer.size()-1) { front = 0; }
+			return removed;
+		}
+		return removed;	}
     
 };
 
