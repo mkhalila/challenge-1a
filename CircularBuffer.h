@@ -57,12 +57,12 @@ public:
 		if (count() > 0) {
 			removed = buffer[front];
 			buffer[front] = (char) 0;
+			if (front == buffer.size()) { front = 0; }
 			if (front == rear) { front = rear = -1; }	
-			if (front == buffer.size()-1) { front = 0; }
+			++front;
 			return removed;
 		}
-		return removed;	}
-    
+	}
 };
 
 
