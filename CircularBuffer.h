@@ -45,6 +45,14 @@ public:
 		}
 		return false;
 	}
+
+	void add(const char & c) {
+
+	}
+
+	char remove() {
+		
+	}
     
 };
 
