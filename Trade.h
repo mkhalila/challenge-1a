@@ -50,19 +50,6 @@ Trade bestBuySellTime(const vector<int> & prices) {
     return Trade(indLowest, indLargest);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Don't write any code below this line
 
 #endif
