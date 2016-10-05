@@ -17,7 +17,13 @@ using pep::vector;
  * - remove() which removes the next element from the buffer (you can assume the buffer is not empty)
  */
 class CircularBuffer {
+protected:
+	vector<char> buffer;
 
+public: 
+	CircularBuffer(int size) {
+		buffer = vector<char>(size);
+	}
     
 };
 
