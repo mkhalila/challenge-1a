@@ -43,8 +43,6 @@ Trade bestBuySellTime(const vector<int> & prices) {
             }
         }
     }
-
-    cout << indLowest << " " << indLargest << endl;
     
     return Trade(indLowest, indLargest);
 }
