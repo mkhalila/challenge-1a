@@ -3,7 +3,10 @@
 
 
 #include "vector.h"
+#include <iostream>
 using pep::vector;
+using std::cout;
+using std::endl;
 
 
 /** TODO: complete the definition of the class CircularBuffer here
@@ -23,6 +26,17 @@ protected:
 public: 
 	CircularBuffer(int size) {
 		buffer = vector<char>(size);
+		cout << buffer.size() << endl;
+	}
+
+	int count() const {
+		int count = 0;
+		for(int i = 0; i < buffer.size(); i++) {
+			if (buffer[i] != (char) 0) {
+				++count;
+			}
+		}
+		return count;
 	}
     
 };
