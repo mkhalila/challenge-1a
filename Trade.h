@@ -3,7 +3,10 @@
 
 
 #include "vector.h"
+#include <iostream>
 using pep::vector;
+using std::cout;
+using std::endl;
 
 
 class Trade {
@@ -26,7 +29,12 @@ public:
 
 };
 
-// TODO your code goes here:
+Trade bestBuySellTime(const vector<int> & prices) {
+    int smallestIndex = 0;
+    int largest = 0;
+    int largestIndex = 0;
+}
+
 
 
 
