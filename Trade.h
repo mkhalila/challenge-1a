@@ -39,6 +39,8 @@ Trade bestBuySellTime(const vector<int> & prices) {
             smallestIndex = i;
         }
     }
+
+    return Trade(smallestIndex, largestIndex);
 }
 
 
