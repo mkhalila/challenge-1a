@@ -26,9 +26,8 @@ protected:
 	int rear;
 
 public: 
-	CircularBuffer(int size) :front(0), rear(0) {
+	CircularBuffer(int size) :front(-1), rear(-1) {
 		buffer = vector<char>(size);
-		cout << buffer.size() << endl;
 	}
 
 	int count() const {
@@ -49,7 +48,14 @@ public:
 	}
 
 	void add(const char & c) {
-
+		if (!full()) {
+			if (rear == buffer.size() - 1) { rear = 0; }
+			else { ++rear; }
+			buffer[rear] = c;
+			if (front == -1) {
+				front = 0;
+			}
+		}
 	}
 
 	char remove() {
